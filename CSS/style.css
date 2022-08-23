@@ -1,0 +1,104 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+
+*
+{
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0;
+    font-family: 'Poppins' monospace;
+}
+
+body
+{
+    background: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+
+form
+{
+    border-radius: 40px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+    width: 600px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form input:nth-child(1)
+{
+    position: relative;
+    top: 30px;
+    width: 400px;
+    height: 40px;
+    border: none;
+    outline: none;
+    padding: 10px;
+    background: #222;
+    color: rgb(109, 250, 250);
+    font-size: 1.5em;
+    border-radius: 20px;
+}
+
+form input[type="file"]
+{
+    position: relative;
+    top: 50px;
+}
+
+form .archive
+{
+    position: relative;
+    top: 60px;
+    display: grid;
+    color: rgb(109, 250, 250);
+    background: #222;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 150px;
+    height: 30px;
+    border-radius: 20px;
+}
+
+form textarea
+{
+    position: relative;
+    top: 100px;
+    resize: none;
+    background: #222;
+    height: 200px;
+    width: 400px;
+    border: none;
+    outline: none;
+    font-size: 2em;
+    border-radius: 20px;
+    color: rgb(109, 250, 250);
+    padding: 20px;
+}
+
+form input::placeholder
+{
+    color: rgb(109, 250, 250);
+}
+
+form input[type="submit"]
+{
+    width: 150px;
+    position: relative;
+    top: 125px;
+    height: 60px;
+    background: #222;
+    outline: none;
+    border: none;
+    color: rgb(109, 250, 250);
+    font-size: 1.5em;
+}

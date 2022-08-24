@@ -27,7 +27,7 @@ email.HTMLbody = (f"""
                     
                     <p> E aqui uma pequena supresa: </p>
                     
-                    <a href="{fn}"><img scr="fn"></a>
+                    <a href="{fn}"><img scr="{fn}"></a>
                     
                     <h2> Obrigado por ter lido minha menssagem</h2>
                     <h1> De: {nome}</h1>

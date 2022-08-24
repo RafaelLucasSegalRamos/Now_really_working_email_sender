@@ -90,15 +90,15 @@ form input::placeholder
     color: rgb(109, 250, 250);
 }
 
-form input[type="submit"]
+form .botao
 {
     width: 150px;
-    position: relative;
-    top: 125px;
+    position: absolute;
     height: 60px;
     background: #222;
     outline: none;
     border: none;
     color: rgb(109, 250, 250);
     font-size: 1.5em;
+    bottom: 130px;
 }

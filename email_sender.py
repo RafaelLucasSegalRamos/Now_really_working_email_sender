@@ -15,22 +15,11 @@ fn = os.path.basename(File.filename)
 
 titulo = f'Ola meu nome é {nome}'
 
-email = outlook.CreateItem(0)
+# email = outlook.CreateItem(0)
 
 
-email.To = "mamacosupremo.sol@gmail.com"
-email.Subject = titulo
-email.HTMLbody = (f"""
-                    <h1> Olá Rafael!</h1>
-                    
-                    <p>{Text}</p>
-                    
-                    <p> E aqui uma pequena supresa: </p>
-                    
-                    <a href="{fn}"><img scr="{fn}"></a>
-                    
-                    <h2> Obrigado por ter lido minha menssagem</h2>
-                    <h1> De: {nome}</h1>
-                    """)
-email.Send()
-print("Email Enviado")   
+print("<html><head><title>Titulo1</title></head>")
+print(f"<body><h1>{nome}</h1>")
+print(f"<img scr='{fn}'>")
+print(f"<p>{Text}</p>")
+print("</body></html>")

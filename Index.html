@@ -8,11 +8,11 @@
     <title>Email sender</title>
 </head>
 <body>
-    <form action="email_sender.py">
-        <input type="text" name="pname" placeholder="Your Name..." value="Nome" required>
-        <input type="file" name="filename" id="image" value="arquivo" style="display: none;">
+    <form enctype="multipart/form-data" method="post" action="email_sender.py">
+        <input type="text" name="pname" placeholder="Your Name..." required>
+        <input type="file" name="filename" id="image" style="display: none;">
         <div class="archive"> <label for="image"> Carregar Arquivo </label> </div>
-        <textarea name="texto" value="text" required></textarea>
+        <textarea name="texto" required></textarea>
         <button type="submit" class="botao">Send</button>
     </form>
 </body>

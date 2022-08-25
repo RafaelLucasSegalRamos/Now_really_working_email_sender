@@ -9,10 +9,10 @@
 </head>
 <body>
     <form action="email_sender.py">
-        <input type="text" name="pname" placeholder="Your Name..." required>
-        <input type="file" name="filename" id="image" style="display: none;">
+        <input type="text" name="pname" placeholder="Your Name..." value="Nome" required>
+        <input type="file" name="filename" id="image" value="arquivo" style="display: none;">
         <div class="archive"> <label for="image"> Carregar Arquivo </label> </div>
-        <textarea name="des" required></textarea>
+        <textarea name="texto" value="text" required></textarea>
         <button type="submit" class="botao">Send</button>
     </form>
 </body>

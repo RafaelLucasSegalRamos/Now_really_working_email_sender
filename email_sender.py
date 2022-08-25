@@ -6,10 +6,10 @@ print('content-type:text/html\r\n\r\n')
 outlook = win32.Dispatch('outlook.application')
 
 form =  cgi.FieldStorage()
-nome = str(form.getvalue("pname"))
-Text = str(form.getvalue("des"))
+nome = str(form.getvalue("Nome"))
+Text = str(form.getvalue("text"))
 
-File = form['filename']
+File = form['arquivo']
 
 fn = os.path.basename(File.filename)
 

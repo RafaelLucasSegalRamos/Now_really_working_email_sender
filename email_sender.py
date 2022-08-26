@@ -4,18 +4,18 @@ import cgi, os
 import cgitb
 import win32com.client as win32
 print('content-type:text/html\r\n\r\n')
-outlook = win32.Dispatch('outlook.application')
-email = outlook.CreateItem(0)
 
 cgitb.enable()
+outlook = win32.Dispatch('outlook.application')
+email = outlook.CreateItem(0)
 form =  cgi.FieldStorage()
-nome = str(form.getvalue("pname"))
-Text = str(form.getvalue("text"))
+nome = str(form.getvalue("nome"))
+Text = str(form.getvalue("texto"))
 
 file = form["filename"]
 
 filenames = os.path.basename(file.filename)
-open("C:/xampp/htdocs/Now_really_working_email_sender/tem/"+ filenames, "wb").write(file.file.read())
+open("tem/"+ filenames, "wb").write(file.file.read())
 
 titulo = f"Olá meu nome é {nome}"
 

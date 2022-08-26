@@ -9,12 +9,12 @@
 </head>
 <body>
     <form enctype="multipart/form-data" method="post" action="email_sender.py">
-        <input type="text" name="pname" placeholder="Your Name..." required>
+        <input type="text" name="nome" placeholder="Your Name..." required>
         <input type="file" name="filename" id="image" style="display: none;">
         <div class="archive"> <label for="image"> Carregar Arquivo </label> </div>
         <textarea name="texto" required></textarea>
         <!-- <button type="submit" class="botao">Send</button> -->
-        <input type="submit" value="Send" class="botao">
+        <input type="submit" value="Send" name="sub" class="botao">
     </form>
 </body>
 </html>

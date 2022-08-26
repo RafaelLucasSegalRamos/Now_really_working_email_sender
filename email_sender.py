@@ -1,8 +1,11 @@
 #! C:\Users\rafae\AppData\Local\Programs\Python\Python310\python.exe
 
 import cgi, os
+from fileinput import close
 import cgitb
 import win32com.client as win32
+import smtplib
+import email.message
 print('content-type:text/html\r\n\r\n')
 
 cgitb.enable()
@@ -26,26 +29,30 @@ open("tem/"+ filenames, "wb").write(archive.file.read())
 #         </head>
 #         <body>
 #         <h1 style="margin-top: 20px;"> Olá meu nome é {nome} </h1>
-#         <img src="tem/MEIO.jpg" alt="N sei pq n funciona" style="margin-top: 40px;">
+#         <img src="tem/{filenames}" alt="N sei pq n funciona" style="margin-top: 40px;">
 #         <p style="margin-top: 40px;">{Text}</p>
 #         </body>
 #         </html>
 #       """)
 
-outlook = win32.Dispatch('outlook.application')
-titulo = 'Nova menssagem sobre seu Site!'
-menssagem = "só trocando a menssagem msm"
-nome = "rafael"
+corpo_email = f"""
+    <h1> Olá gosta de dizer sobre seu site <h1>
+    <img src="tem/{filenames}" alt="N sei pq n funciona" style="margin-top: 40px;">
 
-a_email = outlook.CreateItem(0)
+    <p style="margin-top:30px;"> {Text} </p>
+"""
 
-a_email.To = "mamacosupremo.sol@gmail.com"
-a_email.Subject = titulo
-a_email.HTMLbody = (f"""
-                    <h1> Olá Rafael!</h1>
-                    
-                    <p>{menssagem}</p>
-                    
-                    <h2> De: </h2> <h1>{nome}</h1>
-                    """)
-a_email.Send()
+msg = email.message.Message()
+msg['Subject'] = f"Olá meu nome é {nome}"
+msg['From'] = 'rafael.testescodigos@gmail.com'
+msg['To'] = 'mamacosupremo.sol@gmail.com'
+password = "I won't show it"
+msg.add_header('Content-Type', 'text/html')
+msg.set_payload(corpo_email)
+
+s = smtplib.SMTP('smtp.gmail.com: 587')
+s.starttls()
+
+s.login(msg['From'], password)
+s.sendmail(msg['From'], [msg['To']], msg.as_string().encode('utf-8'))
+print('Email enviado') 

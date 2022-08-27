@@ -1,9 +1,7 @@
 #! C:\Users\rafae\AppData\Local\Programs\Python\Python310\python.exe
 
 import cgi, os
-from fileinput import close
 import cgitb
-import win32com.client as win32
 import smtplib
 import email.message
 print('content-type:text/html\r\n\r\n')
